@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Booking | Lauren Auriana Photography</title>
+    <link rel="stylesheet" href="contact.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header class="navbar-header">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">Lauren Auriana <span class="tag">Photography</span></a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Gallery.html">Gallery</a></li>
+                    <li><a href="S&R.html">Services & Rates</a></li>
+                    <li><a href="Contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <span class="badge">Get In Touch</span>
+                <h1>Let's Create Something <span class="highlight">Beautiful</span></h1>
+                <p class="subtitle">Whether you're booking senior portraits at Miami University, a couple's session in Cincinnati, or campus event coverage, fill out the form below!</p>
+            </div>
+        </section>
+
+        <!-- Form & Info Section -->
+         <div class="main-wrapper">
+        <div class="container">
+            <h1>Contact Me</h1>
+
+            <form action="https://formsubmit.co/aurianlm@miamioh.edu" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Numer">Phone Number</label>
+                    <input type="phone number" id="Number" name="Number" placeholder="(xxx)xxx-xxxx" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="hear-about">What session do you want?</label>
+                    <select name="reference" id="hear-about">
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Grad & Senior">Grad & Senior</option>
+                        <option value="Sporting Event">Sporting Event</option>
+                        <option value="Couple/engagement">Couple/Engagement</option>
+                        <option value="Portraits/Headshots">Portraits/Headshots</option>
+                        <option value="Events/Socials">Events & Socials</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Tell me more about it!</label>
+                    <div class="radio-group">
+                        <input type="text" id="name" name="name" placeholder="Type here" required>
+                    </div>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>

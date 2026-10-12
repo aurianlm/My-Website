@@ -1,0 +1,354 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --primary-color: #c41e3a;       /* Miami Red */
+    --primary-dark: #991b1b;
+    --dark-neutral: #18181b;        /* Deep Charcoal */
+    --body-text: #3f3f46;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --border-color: #e4e4e7;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --radius-sm: 6px;
+    --radius-lg: 12px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: var(--body-text);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION
+   ========================================================================== */
+.navbar-header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--dark-neutral);
+    text-decoration: none;
+}
+
+.brand-logo .tag {
+    font-weight: 300;
+    font-size: 0.95rem;
+    color: #71717a;
+    margin-left: 0.25rem;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--body-text);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   3. GALLERY HERO & FILTERS
+   ========================================================================== */
+.gallery-hero {
+    padding: 4.5rem 0 2rem;
+    text-align: center;
+    background-color: var(--light-bg);
+}
+
+.badge {
+    display: inline-block;
+    background-color: #fee2e2;
+    color: var(--primary-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.gallery-hero h1 {
+    font-size: 3rem;
+    color: var(--dark-neutral);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #71717a;
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Filter Bar */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.filter-btn {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    color: var(--body-text);
+    padding: 0.6rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--dark-neutral);
+    color: var(--white);
+    border-color: var(--dark-neutral);
+}
+
+/* ==========================================================================
+   4. PHOTO GRID & CARDS
+   ========================================================================== */
+.gallery-section {
+    padding: 4rem 0 6rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.photo-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    cursor: pointer;
+    background-color: #e4e4e7; /* Visual placeholder background */
+    transition: opacity 0.3s ease;
+}
+
+.photo-card img:hover {
+    opacity: 0.92;
+}
+
+.photo-info {
+    padding: 1.25rem;
+}
+
+.photo-info h3 {
+    font-size: 1.1rem;
+    color: var(--dark-neutral);
+    margin-bottom: 0.25rem;
+}
+
+.photo-info p {
+    font-size: 0.875rem;
+    color: #71717a;
+}
+
+/* Google Drive Call-to-Action */
+.drive-cta {
+    margin-top: 4rem;
+    padding: 2.5rem;
+    background-color: var(--light-bg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.drive-cta p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-neutral);
+    margin-bottom: 1rem;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 2px solid var(--dark-neutral);
+    color: var(--dark-neutral);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background-color: var(--dark-neutral);
+    color: var(--white);
+}
+
+/* ==========================================================================
+   5. LIGHTBOX MODAL
+   ========================================================================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.5);
+}
+
+.lightbox-caption {
+    color: var(--white);
+    margin-top: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lightbox-close:hover {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+.footer {
+    background-color: var(--dark-neutral);
+    color: var(--white);
+    padding: 3rem 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-info h3 {
+    font-size: 1.25rem;
+}
+
+.footer-info p {
+    color: #a1a1aa;
+    font-size: 0.9rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-socials a {
+    color: #e4e4e7;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-socials a:hover {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 768px) {
+    .gallery-hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
